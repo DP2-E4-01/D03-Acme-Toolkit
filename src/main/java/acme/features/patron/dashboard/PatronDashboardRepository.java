@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.item.ItemType;
 import acme.enums.Status;
 import acme.framework.repositories.AbstractRepository;
 

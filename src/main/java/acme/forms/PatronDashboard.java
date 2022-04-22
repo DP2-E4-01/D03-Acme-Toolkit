@@ -77,6 +77,9 @@ public class PatronDashboard implements Serializable {
 		return new ArrayList<String>(Arrays.asList("EUR", "USD", "GBP"));
 	}
 	
+//	public List<String> getTotalstatus() {
+//		return new ArrayList<String>(Arrays.asList("Proposed", "Accepted", "Denied"));
+//	}
 	
 	
 	Map<Status,  Integer> totalNumberPatronage;

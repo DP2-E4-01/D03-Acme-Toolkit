@@ -18,38 +18,22 @@
 </style>
 
 <div class="totals">
+
+<h2>Patronages totales por Status</h2>
+	<c:forEach items="${Status.values()}" var="status">
+		<div class="row">
+			<div class="col">
+				<div class="card">
+					<div class="card-body">
+						<label>
+							<acme:message code="Patron.dashboard.form.label.totalpatronages${status}" />
+							<input type="text" value="${totalNumberPatronage[status]}" readonly />
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</c:forEach>
+</div>	
 	
-	<h2>Patronages totales por Status</h2>
-	<div class="row">
-		<div class="col">
-			<div class="card">
-				<div class="card-body">
-					<label><acme:message code="patron.dashboard.form.label.totalNumberPatronagesProposed"/>
-						<input type="text" value="${totalNumberPatronage[Status.proposed]}" readonly />
-					</label>
-				</div>
-			</div>
-		</div>
-		<div class="col">
-			<div class="card">
-				<div class="card-body">
-					<label>
-						<acme:message code="patron.dashboard.form.label.totalNumberPatronagesAccepted"/>
-						<input type="text" value="${totalNumberPatronage[Status.accepted]}" readonly />
-					</label>
-				</div>
-			</div>
-		</div>
-		<div class="col">
-			<div class="card">
-				<div class="card-body">
-					<label>
-						<acme:message code="patron.dashboard.form.label.totalNumberPatronagesDenied"/>
-						<input type="text" value="${totalNumberPatronage[Status.denied]}" readonly />
-					</label>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 

@@ -6,15 +6,21 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import acme.entities.item.ItemType;
 import acme.enums.Status;
+import acme.features.patron.dashboard.PatronDashboardRepository;
 import acme.forms.Dashboard;
+import acme.forms.PatronDashboard;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.repositories.AbstractRepository;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractShowService;
+import acme.roles.Patron;
 
 @Service
 public class AdministratorDashboardShowService implements AbstractShowService<Administrator, Dashboard> {
