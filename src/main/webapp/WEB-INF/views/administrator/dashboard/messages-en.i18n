@@ -1,0 +1,11 @@
+# i18n-es.i18n
+#
+
+administrator.dashboard.form.label.totalComponents = Total Components
+administrator.dashboard.form.label.totalTools = Total Tools
+
+administrator.dashboard.form.label.totalNumberPatronagesProposed = Total Proposed Patronages
+administrator.dashboard.form.label.totalNumberPatronagesAccepted = Total Accepted Patronages
+administrator.dashboard.form.label.totalNumberPatronagesDenied = Total Denied Patronages
+
+administrator.configuration.form.button.update = Actualizar configuración
