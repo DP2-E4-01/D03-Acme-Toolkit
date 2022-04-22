@@ -15,6 +15,7 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractShowService;
+
 import acme.roles.Patron;
 
 @Service
@@ -22,7 +23,6 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, P
 
 	// Internal state ---------------------------------------------------------
 
-	@Autowired
 	protected PatronDashboardRepository repository;
 
 	@Override
@@ -39,9 +39,7 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, P
 		final PatronDashboard result = new PatronDashboard();
 		int id = request.getPrincipal().getActiveRoleId();
 		
-		result.setTotalNumberPatronage(this.getTotals( id));
-		//result.setPatronagesBudgets(this.getPatronagesBudgets(result.getTotalscurre() ,id));
-		
+		result.setTotalNumberPatronage(this.getTotals(id));
 		
 		return result;
 	}
@@ -54,11 +52,9 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, P
 		assert model != null;
 		
 		request.unbind(entity, model, "totalNumberPatronage");
-		
-	
 	}
 	
-	private Map<Status, Integer> getTotals(final  int id) {
+	private Map<Status, Integer> getTotals(final int id) {
 		
 		
 		final Map<Status, Integer> totals = new HashMap<Status, Integer>();
@@ -69,6 +65,7 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, P
 		return totals;
 	}
 	
+
 	/*
 	private Map<String, Map<String, Double>> getPatronagesBudgets( List<String> totalsKeys2 , int id) {
 		final Map<String, Map<String, Double>> patronageBudgets = new HashMap<String, Map<String, Double>>();
@@ -91,5 +88,6 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, P
 		return patronageBudgets;
 	}
 	*/
+
 	
 }
