@@ -25,7 +25,7 @@
 			<div class="card">
 				<div class="card-body">
 					<label><acme:message code="patron.dashboard.form.label.totalNumberPatronagesProposed"/>
-						<input type="text" value="${totalNumberPatronage.proposed}" readonly />
+						<input type="text" value="${totalNumberPatronage[Status.proposed]}" readonly />
 					</label>
 				</div>
 			</div>
@@ -35,7 +35,7 @@
 				<div class="card-body">
 					<label>
 						<acme:message code="patron.dashboard.form.label.totalNumberPatronagesAccepted"/>
-						<input type="text" value="${totalNumberPatronage.accepted}" readonly />
+						<input type="text" value="${totalNumberPatronage[Status.accepted]}" readonly />
 					</label>
 				</div>
 			</div>
@@ -45,7 +45,7 @@
 				<div class="card-body">
 					<label>
 						<acme:message code="patron.dashboard.form.label.totalNumberPatronagesDenied"/>
-						<input type="text" value="${totalNumberPatronage.denied}" readonly />
+						<input type="text" value="${totalNumberPatronage[Status.denied]}" readonly />
 					</label>
 				</div>
 			</div>
