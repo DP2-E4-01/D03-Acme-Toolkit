@@ -3,7 +3,6 @@ package acme.entities.configuration;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Range;
 
@@ -14,32 +13,24 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Configuration extends AbstractEntity {
+public class Configuration extends AbstractEntity{
 	
 private static final long	serialVersionUID	= 1L;
 	
 	
 	@NotBlank
-	protected String weakSpamWords;
+	String weakSpamWords;
 	
 	@NotBlank
-	protected String strongSpamWords;
+	String strongSpamWords;
 	
 	@NotNull
 	@Range(min = 0, max = 1)
-	protected Double strongSpamThreshold;
+	private Double strongSpamThreshold;
 	
 	@NotNull
 	@Range(min = 0, max = 1)
-	protected Double weakSpamThreshold;
-	
-	@NotBlank
-	@Pattern(regexp="EUR")
-	protected String defaultCurr;
-	
-	@NotBlank
-	@Pattern(regexp = "EUR,USD,GBP")
-	protected String acceptedCurr;
+	private Double weakSpamThreshold;
 	
 	
 	public boolean isSpamWeak(final String text) {
